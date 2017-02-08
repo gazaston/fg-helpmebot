@@ -2,7 +2,7 @@ require 'sinatra'
 require 'httparty'
 require 'json'
  
-get '/imfree' do
+post '/imfree' do
   postback params[:text], params[:channel_id]
   status 200
 end
