@@ -12,7 +12,7 @@ def postback(channel, user_id, user_name, text)
 
   case text
     when "graphic"
-      response ||= "<@gaz>, <@ale}>, <@chris>"
+      response ||= "<@gaz>, <@ale>, <@chris>"
     when "service"
       response ||= "<@ale>, <@kj>, <@jan>"
     else
