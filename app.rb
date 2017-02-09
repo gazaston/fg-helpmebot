@@ -3,7 +3,7 @@ require 'httparty'
 require 'json'
  
 post '/helpme' do
-  postback(params[:channel_id], params[:user_id], , params[:user_name])
+  postback(params[:channel_id], params[:user_id], params[:user_name])
   status 200
 end
  
