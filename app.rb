@@ -14,7 +14,7 @@ end
  
 def postback(channel, user_id, user_name, text)
   client = ApiAiRuby::Client.new(:client_access_token => ENV['1ad258b74e4a4654a7ff8f9bb086a3fc'])
-  # slack_webhook = ENV['SLACK_WEBHOOK_URL']   
+  slack_webhook = ENV['SLACK_WEBHOOK_URL']   
 
   text = text.downcase 
 
@@ -52,7 +52,7 @@ def postback(channel, user_id, user_name, text)
   end
 
 
-    HTTParty.post(client, body: {
+    HTTParty.post(slack_webhook, body: {
         "text" => response, 
         "username" => "Help Me Bot", 
         "channel" => params[:channel_id]}.to_json, 
