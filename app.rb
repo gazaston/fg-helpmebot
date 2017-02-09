@@ -12,16 +12,16 @@ def postback(channel, user_id, user_name, text)
 
   case text
     when "graphic"
-      response ||= "<@gaz>, <@willr>, <@ale>"
+      response ||= "Hey. <@#{user_name}> needs some help with some graphic design. Can you help, <@gaz>, <@willr>, <@ale>?"
     when "service"
-      response ||= "<@gaz>, <@willr>, <@ale>"
+      response ||= "Hey. <@#{user_name}> needs some help with some service design. Can you help, <@gaz>, <@willr>, <@ale>?"
     else
       response ||= "Sorry, I didn't get that…"
   end
 
 
     HTTParty.post(slack_webhook, body: {
-        "text" => "Hey. <@#{user_name}> needs some help with #{text}. Can you help?\n#{response}", 
+        "text" => response, 
         "username" => "HelpMeBot", 
         "channel" => params[:channel_id]}.to_json, 
         headers: {'content-type' => 'application/json'
