@@ -8,13 +8,20 @@ post '/helpme' do
 end
  
 def postback(channel, user_id, user_name, text)
-    slack_webhook = ENV['SLACK_WEBHOOK_URL']
-    
-    # if discipline = ""
+    slack_webhook = ENV['SLACK_WEBHOOK_URL']    
+
+  case text
+    when "graphic"
+      response ||= "<@#{gaz}>, <@#{ale}>, <@#{chris}>"
+    when "service"
+      response ||= "<@#{ale}>, <@#{kj}>, <@#{jan}>"
+    else
+      response ||= "Sorry, I didn't get that…"
+  end
 
 
     HTTParty.post(slack_webhook, body: {
-        "text" => "Hey. <@#{user_name}> needs some help with #{text}", 
+        "text" => "Hey. <@#{user_name}> needs some help with #{text}. Can you help?\n#{response}", 
         "username" => user_name, 
         "channel" => params[:channel_id]}.to_json, 
         headers: {'content-type' => 'application/json'
