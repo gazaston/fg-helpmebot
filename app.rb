@@ -42,7 +42,7 @@ def postback(channel, user_id, user_name, text)
     when "data"
       response ||= "Hey. <@#{user_name}> needs some help with some *data work.* Can you help, <@gaz>, <@willr>, <@ale>?"
     else
-      response ||= "Sorry, I didn't get that… I'm not too smart so you'll need to enter a category from the list in the message pinned to this channel 😘"
+      response ||= "Sorry, #{text} isn't in the list of categories I have. I'm not too smart so you'll need to enter a category from the list in the message pinned to this channel 😘"
   end
 
 
