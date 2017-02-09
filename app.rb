@@ -14,7 +14,7 @@ def postback(channel, user_id, user_name)
 
 
     HTTParty.post(slack_webhook, body: {
-        "text" => "hey @#{user_name}", 
+        "text" => "hey <@#{user_name}>", 
         "username" => user_name, 
         "channel" => params[:channel_id]}.to_json, 
         headers: {'content-type' => 'application/json'
