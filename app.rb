@@ -16,9 +16,9 @@ def postback(channel, user_id, user_name, text)
 
   case text
     when "graphic"
-      response ||= "Hey. <@#{user_name}> needs some help with some graphic design. Can you help, <@gaz>, <@willr>, <@ale>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *graphic design.* Can you help, <@gaz>, <@willr>, <@ale>?"
     when "service"
-      response ||= "Hey. <@#{user_name}> needs some help with some service design. Can you help, <@gaz>, <@willr>, <@ale>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *service design.* Can you help, <@gaz>, <@willr>, <@ale>?"
     when "strategy"
       response ||= "Hey. <@#{user_name}> needs some help with some strategy work. Can you help, <@gaz>, <@willr>, <@ale>?"
     when "organisation"
