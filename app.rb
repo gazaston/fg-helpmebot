@@ -2,18 +2,23 @@ require 'sinatra'
 require 'httparty'
 require 'json'
 require 'api-ai-ruby'
+
  
 post '/helpme' do
-  postback(params[:channel_id], params[:user_id], params[:user_name], params[:text])
-  status 200
+  # postback(params[:channel_id], params[:user_id], params[:user_name], params[:text])
+  # "hi"
+  # status 200
+  logger.info JSON.parse(request.body.read.to_s)
 end
+
+
 
 # def api_ai_client
 #   client = ApiAiRuby::Client.new(:client_access_token => ENV['1ad258b74e4a4654a7ff8f9bb086a3fc'])
 # end
  
 def postback(channel, user_id, user_name, text)
-  client = ApiAiRuby::Client.new(:client_access_token => ENV['1ad258b74e4a4654a7ff8f9bb086a3fc'])
+  # client = ApiAiRuby::Client.new(:client_access_token => ENV['1ad258b74e4a4654a7ff8f9bb086a3fc'])
   slack_webhook = ENV['SLACK_WEBHOOK_URL']   
 
   text = text.downcase 
