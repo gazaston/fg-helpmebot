@@ -17,15 +17,15 @@ def responder(data)
   user_name = data["originalRequest"]["data"]["user"].to_s
   case data["result"]["parameters"]["discipline"]
     when "graphic"
-      response ||= "Hey. <@#{user_name}> needs some help with some *graphic design.* Can you help, <@ale>, <@kj>, <@elle>, <@nina>, <@chris>, <@gaz>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *graphic design.* Can you help, <@ale>, <@kj>, <@elle>, <@nina>, <@chris>, <@gaz>, <@dessy>?"
     when "service"
-      response ||= "Hey. <@#{user_name}> needs some help with some *service design.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@simone>, <@jan>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *service design.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@simone>, <@jan>, <@dessy>?"
     when "strategy"
       response ||= "Hey. <@#{user_name}> needs some help with some *strategy work.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@adam>, <@simone>, <@jrae>, <@alex>, <@emmamcg>, <@benunsworth>, <@willr>, <@matt>?"
     when "organisation"
       response ||= "Hey. <@#{user_name}> needs some help with some *org design.* Can you help, <@lingjing>, <@nina>, <@emilybazalgette>, <@adam>, <@simone>, <@emmamcg>, <@benunsworth>?"
     when "product"
-      response ||= "Hey. <@#{user_name}> needs some help with some *product work.* Can you help, <@kj>, <@elle>, <@lingjing>, <@chris>, <@gaz>, <@jrae>, <@alex>, <@matt>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *product work.* Can you help, <@kj>, <@elle>, <@lingjing>, <@chris>, <@gaz>, <@jrae>, <@alex>, <@matt>, <@dessy>?"
     when "development"
       response ||= "Hey. <@#{user_name}> needs some help with some *development work.* Can you help, <@chris>, <@gaz>, <@jrae>, <@alex>?"
     when "tech"
@@ -44,6 +44,8 @@ def responder(data)
       response ||= "Hey. <@#{user_name}> needs some help with some *data work.* Can you help, <@nina>, <@adam>, <@gaz>, <@benunsworth>?"
     when "writing"
       response ||= "Hey. <@#{user_name}> needs some help with some *writing/editing work.* Can you help, <@nina>, <@adam>, <@gaz>, <@benunsworth>?"
+    when "test"
+      response ||= "Hey. This is just a test response."
     else
       response ||= "Sorry, but that isn't in the list of categories I have. I'm not too smart so you'll need to enter a category from the list in the message pinned to this channel 😘"
   end
