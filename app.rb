@@ -17,15 +17,15 @@ def responder(data)
   user_name = data["originalRequest"]["data"]["user"].to_s
   case data["result"]["parameters"]["discipline"]
     when "graphic"
-      response ||= "Hey. <@#{user_name}> needs some help with some *graphic design.* Can you help, <@ale>, <@kj>, <@elle>, <@nina>, <@chris>, <@gaz>, <@dessy>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *graphic design.* Can you help, <@ale>, <@kj>, <@elle>, <@nina>, <@chris>, <@gaz>, <@dessy>, <@jt>?"
     when "service"
-      response ||= "Hey. <@#{user_name}> needs some help with some *service design.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@simone>, <@jan>, <@dessy>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *service design.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@simone>, <@jan>, <@dessy>, <@jt>?"
     when "strategy"
       response ||= "Hey. <@#{user_name}> needs some help with some *strategy work.* Can you help, <@ale>, <@kj>, <@elle>, <@lingjing>, <@nina>, <@emilybazalgette>, <@adam>, <@simone>, <@jrae>, <@alex>, <@emmamcg>, <@benunsworth>, <@willr>, <@matt>?"
     when "organisation"
       response ||= "Hey. <@#{user_name}> needs some help with some *org design.* Can you help, <@lingjing>, <@nina>, <@emilybazalgette>, <@adam>, <@simone>, <@emmamcg>, <@benunsworth>?"
     when "product"
-      response ||= "Hey. <@#{user_name}> needs some help with some *product work.* Can you help, <@kj>, <@elle>, <@lingjing>, <@chris>, <@gaz>, <@jrae>, <@alex>, <@matt>, <@dessy>?"
+      response ||= "Hey. <@#{user_name}> needs some help with some *product work.* Can you help, <@kj>, <@elle>, <@lingjing>, <@chris>, <@gaz>, <@jrae>, <@alex>, <@matt>, <@dessy>, <@jt>?"
     when "development"
       response ||= "Hey. <@#{user_name}> needs some help with some *development work.* Can you help, <@chris>, <@gaz>, <@jrae>, <@alex>?"
     when "tech"
